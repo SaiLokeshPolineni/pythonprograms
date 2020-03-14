@@ -1,0 +1,33 @@
+git branch branchname  (creates new branch)
+
+git checkout branchname (to work on specific branch)
+
+(do changes)
+
+git status (to see the modified files)
+
+git add -A (to stage all the modifed files)
+
+git add filename (to stage specific modified file)
+
+git commit -m "message" (commit changes locally)
+
+git push -u origin branchname (push the branch to remote repository)
+
+git checkout master (checkout master locally)
+
+git pull origin master (to get all the modified master from remote repository, like a refresh)
+
+git merge branchname (merge branch to master, this to be done if code is all well and passed testing)
+
+git push origin master (push changes to master branch in remote repository)
+
+###########To delete branch#############
+
+git branch --merged (to see all the branches mereged)
+
+git branch -d branchname (to delete branch locally)
+
+git push origin --delete branchname
+
+
