@@ -18,7 +18,7 @@ class Employee:
 
     @staticmethod
     def company_details():
-        '''static method doesn't rerquire any reference to class or instance, so no parameters'''
+        '''static method doesn't rerquire any reference to class or instance, so no parameters and no usage of self'''
         return f'Infosys, Lead to Tomorrow'
 s1="Lokesh 32000"
 s2="Praveen 58000"
