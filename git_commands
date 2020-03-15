@@ -31,3 +31,11 @@ git branch -d branchname (to delete branch locally)
 git push origin --delete branchname
 
 
+##########To Undo or rectify mistackes########
+
+git checkout filename (To Undo changes that are done and go back to intial state)
+
+git commit --amend -m "Updated Message"  (To correct the wrong given to last commit without doing new commit, but the git history get updated)
+
+
+
