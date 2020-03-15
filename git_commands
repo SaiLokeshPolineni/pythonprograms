@@ -6,6 +6,10 @@ git checkout branchname (to work on specific branch)
 
 git status (to see the modified files)
 
+git log (To see the commit history)
+
+git log --stat (to see all the changes)
+
 git add -A (to stage all the modifed files)
 
 git add filename (to stage specific modified file)
@@ -22,13 +26,14 @@ git merge branchname (merge branch to master, this to be done if code is all wel
 
 git push origin master (push changes to master branch in remote repository)
 
+
 ###########To delete branch#############
 
 git branch --merged (to see all the branches mereged)
 
 git branch -d branchname (to delete branch locally)
 
-git push origin --delete branchname
+git push origin --delete branchname (to delete branch remotely)
 
 
 ##########To Undo or rectify mistackes########
@@ -37,5 +42,53 @@ git checkout filename (To Undo changes that are done and go back to intial state
 
 git commit --amend -m "Updated Message"  (To correct the wrong given to last commit without doing new commit, but the git history get updated)
 
+git commit --amend (also to add a file mssed in the last commit)
 
 
+#########To undo commit mistake done on wrong branch##########
+
+git log (to take hash value upto 6digits from wrong commit)
+
+git checkout branchname (goto the branch that need to have actual commit)
+
+git cherry-pick hashvalue_upto_6_digit (it creates new commit in desired branch but original commit previous done remains same)
+
+*********reset to previous commit**********
+
+git reset --soft hashvalue (hashvalue that you need to go down to, this will remove all other changes done on that commit but that changes wil still exist in staging area)
+
+git reset hashvalue (default reset is mixed, it remove all other changes and keep them in workdirectory)
+
+git reset --hard hashvalue (removes all other changes completley but still keeps the untracked changes they can be removed using clean)
+
+git clean -df (clear all the untracked changes in the directory option -f for forcefully)
+
+
+############Using stash command##################
+
+"Usage: if changed in other branch need to move to some other branch with all those changes or keep the changes in temp location"
+"Instead of commit use stash to save them in tmp"
+
+git stash save "message" (saved all the changes in stash area and in status can not see to commit changes)
+
+git stash list (to see all the stashed items)
+
+git stash apply stash@{0} (stash@{0} is the position, this will bring back the changes but still keeps them in stash loc)
+
+git stash pop (apply the changes at 0th position and removes them from stash area)
+
+git stash drop stash@{0} (if the stash changes are no longer required removes them completely)
+
+git stash clear (removes the entire stash entries)
+
+##############add options###########
+
+git add -A[--all] [specific directory] (to stage all the files modified/added/deleted)
+
+git add -u[--updated] [specific directory] (to stage only modified/deleted files, it wont check for untracked files)
+
+git add . (same as -A when done on root directory, else handles files only on current dir)
+
+git add * (not recommended as * is unix command and cannot track deleted files from file system)
+
+################################################################################################################
